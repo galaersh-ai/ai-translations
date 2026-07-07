@@ -1,7 +1,7 @@
 site_name: "AI Translations"
 site_description: "Переводы материалов по AI-системам, агентам и паттернам проектирования"
 site_author: "galaersh-ai"
-copyright: "CC BY 4.0"
+copyright: "Original content: MIT © 2025 osok · Translations: CC BY 4.0"
 repo_url: https://github.com/galaersh-ai/ai-translations
 edit_uri: edit/main/docs/
 

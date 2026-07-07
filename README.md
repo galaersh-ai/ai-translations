@@ -37,5 +37,5 @@ mkdocs serve
 
 ## Лицензия
 
-Оригиналы принадлежат [osok/agent-patterns](https://github.com/osok/agent-patterns) (MIT).  
-Переводы — CC BY 4.0.
+Оригиналы принадлежат [osok/agent-patterns](https://github.com/osok/agent-patterns) — MIT License.  
+Переводы — CC BY 4.0 (требуется указание автора перевода).
