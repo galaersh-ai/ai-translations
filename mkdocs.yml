@@ -30,7 +30,6 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
-  language: en
 
 extra:
   alternate:
@@ -43,7 +42,7 @@ extra:
 
 plugins:
   - i18n:
-      docs_structure: suffix
+      docs_structure: folder
       languages:
         - locale: en
           name: English
@@ -52,36 +51,49 @@ plugins:
         - locale: ru
           name: Русский
           build: true
-      nav_translations:
-        ru:
-          Home: Главная
-          "AI Patterns": "AI Паттерны"
-          Introduction: Введение
-          Quickstart: Быстрый старт
-          Installation: Установка
-          Concepts: Концепции
-          "What are Patterns?": "Что такое паттерны?"
-          Architecture: Архитектура
-          Patterns: Паттерны
-          "Choosing a Pattern": "Выбор паттерна"
-          "Comparison Matrix": "Матрица сравнения"
-          ReAct: ReAct
-          Reflection: Reflection
-          Reflexion: Reflexion
-          "Plan and Solve": "Plan and Solve"
-          REWOO: REWOO
-          LLMCompiler: LLMCompiler
-          LATS: LATS
-          STORM: STORM
-          "Self-Discovery": "Self-Discovery"
-          Guides: Руководства
-          API: API
-          Examples: Примеры
-          FAQ: "ЧаВо"
-          Troubleshooting: "Решение проблем"
-          Contributing: "Участие в проекте"
-          Changelog: "История изменений"
-          "Other Translations": "Другие переводы"
+          nav:
+            - Главная: index.md
+            - AI Паттерны:
+                - patterns/index.md
+                - Быстрый старт: patterns/quickstart.md
+                - Установка: patterns/installation.md
+                - Концепции:
+                    - "Что такое паттерны?": patterns/concepts/what-are-patterns.md
+                    - Архитектура: patterns/concepts/architecture.md
+                - Паттерны:
+                    - "Выбор паттерна": patterns/patterns/choosing-a-pattern.md
+                    - "Матрица сравнения": patterns/patterns/comparison-matrix.md
+                    - ReAct: patterns/patterns/react.md
+                    - Reflection: patterns/patterns/reflection.md
+                    - Reflexion: patterns/patterns/reflexion.md
+                    - "Plan and Solve": patterns/patterns/plan-and-solve.md
+                    - REWOO: patterns/patterns/rewoo.md
+                    - LLMCompiler: patterns/patterns/llm-compiler.md
+                    - LATS: patterns/patterns/lats.md
+                    - STORM: patterns/patterns/storm.md
+                    - "Self-Discovery": patterns/patterns/self-discovery.md
+                - Руководства:
+                    - "Лучшие практики": patterns/guides/best-practices.md
+                    - Конфигурация: patterns/guides/configuration.md
+                    - "Пользовательские инструкции": patterns/guides/custom-instructions.md
+                    - Развёртывание: patterns/guides/deployment.md
+                    - "Обработка ошибок": patterns/guides/error-handling.md
+                    - "Расширение паттернов": patterns/guides/extending-patterns.md
+                    - "Настройка промптов": patterns/guides/prompt-customization.md
+                    - "Переопределение промптов": patterns/guides/prompt-overrides.md
+                    - "Постановка целей": patterns/guides/setting-goals.md
+                    - Тестирование: patterns/guides/testing.md
+                - API:
+                    - "Базовый агент": patterns/api/base-agent.md
+                    - Паттерны: patterns/api/patterns.md
+                    - Типы: patterns/api/types.md
+                - Примеры: patterns/examples/index.md
+                - "ЧаВо": patterns/faq.md
+                - "Решение проблем": patterns/troubleshooting.md
+                - "Участие в проекте": patterns/contributing.md
+                - "История изменений": patterns/changelog.md
+            - Другие переводы:
+                - other/index.md
 
 markdown_extensions:
   - pymdownx.highlight:

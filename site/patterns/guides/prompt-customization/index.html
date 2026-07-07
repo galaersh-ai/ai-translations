@@ -1,0 +1,3860 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Переводы материалов по AI-системам, агентам и паттернам проектирования">
+      
+      
+        <meta name="author" content="galaersh-ai">
+      
+      
+      
+        <link rel="prev" href="../extending-patterns/">
+      
+      
+        <link rel="next" href="../prompt-overrides/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../../ru/patterns/guides/prompt-customization/" hreflang="ru">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Prompt Customization - AI Translations</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prompt-customization-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="AI Translations" class="md-header__button md-logo" aria-label="AI Translations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Translations
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt Customization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../ru/patterns/guides/prompt-customization/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/galaersh-ai/ai-translations" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="AI Translations" class="md-nav__button md-logo" aria-label="AI Translations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Translations
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/galaersh-ai/ai-translations" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Patterns
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/what-are-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What are Patterns?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/choosing-a-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choosing a Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/comparison-matrix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparison Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/react/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReAct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/reflection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/reflexion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflexion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/plan-and-solve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan and Solve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/rewoo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWOO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/llm-compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLMCompiler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/lats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LATS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/storm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/self-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../custom-instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extending-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Customization
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Customization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-v020-enterprise-grade-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New in v0.2.0: Enterprise-Grade Prompts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New in v0.2.0: Enterprise-Grade Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-prompt-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprehensive Prompt Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-and-after-the-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before and After: The Improvement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#priority-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-1-file-based-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: File-Based Prompts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 1: File-Based Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-prompt-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Custom Prompt Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-custom-react-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Custom ReAct Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-2-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: Custom Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 2: Custom Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Custom Instructions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Custom Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-specific-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain-Specific Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain-Specific Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legal-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal Domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financial-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Financial Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#educational-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Educational Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cultural-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cultural Sensitivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for Custom Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-from-examplescustom_instructions_examplepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example from examples/custom_instructions_example.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-3-prompt-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: Prompt Overrides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 3: Prompt Overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-prompt-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Prompt Overrides?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-prompt-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Prompt Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#style-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style Customization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-from-examplesprompt_overrides_examplepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example from examples/prompt_overrides_example.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-all-three-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining All Three Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combining All Three Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolution-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-specific-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern-Specific Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern-Specific Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReAct Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-discovery-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Discovery Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storm-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORM Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-your-customizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Your Customizations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Your Customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab-testing-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A/B Testing Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Pitfalls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Pitfalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-missing-template-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Missing Template Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-too-many-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Too Many Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-conflicting-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Conflicting Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-forgetting-to-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Forgetting to Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customization-methods-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customization Methods Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-template-variables-by-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Template Variables by Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt-overrides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Overrides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setting-goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Goals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/base-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../other/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Translations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Translations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-in-v020-enterprise-grade-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New in v0.2.0: Enterprise-Grade Prompts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New in v0.2.0: Enterprise-Grade Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comprehensive-prompt-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comprehensive Prompt Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#before-and-after-the-improvement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Before and After: The Improvement
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#priority-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priority System
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-1-file-based-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 1: File-Based Prompts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 1: File-Based Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-custom-prompt-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating Custom Prompt Directory
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Template Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-custom-react-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Custom ReAct Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-2-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 2: Custom Instructions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 2: Custom Instructions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Custom Instructions?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Custom Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain-specific-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain-Specific Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain-Specific Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#legal-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal Domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financial-compliance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Financial Compliance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#educational-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Educational Content
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cultural-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cultural Sensitivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#best-practices-for-custom-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practices for Custom Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-from-examplescustom_instructions_examplepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example from examples/custom_instructions_example.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-3-prompt-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Method 3: Prompt Overrides
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 3: Prompt Overrides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-are-prompt-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Are Prompt Overrides?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-prompt-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to Use Prompt Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-usage_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#style-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Style Customization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dynamic Overrides
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-from-examplesprompt_overrides_examplepy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example from examples/prompt_overrides_example.py
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#combining-all-three-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combining All Three Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Combining All Three Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resolution-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resolution Order
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-specific-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern-Specific Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern-Specific Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ReAct Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-discovery-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Discovery Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storm-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        STORM Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-your-customizations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Your Customizations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Your Customizations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-testing-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unit Testing Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ab-testing-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A/B Testing Prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Pitfalls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Pitfalls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-missing-template-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Missing Template Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-too-many-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Too Many Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-conflicting-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Conflicting Instructions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-forgetting-to-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Forgetting to Test
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customization-methods-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customization Methods Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#all-template-variables-by-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Template Variables by Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="prompt-customization-guide">Prompt Customization Guide<a class="headerlink" href="#prompt-customization-guide" title="Permanent link">&para;</a></h1>
+<p>Complete guide to customizing prompts in Agent Patterns using three powerful methods: file-based prompts, custom instructions, and prompt overrides.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Agent Patterns provides three complementary ways to customize how your agents communicate with LLMs:</p>
+<ol>
+<li><strong>File-Based Prompts</strong>: Traditional approach using markdown template files</li>
+<li><strong>Custom Instructions</strong>: Add domain-specific context to all system prompts</li>
+<li><strong>Prompt Overrides</strong>: Programmatically replace specific prompts at runtime</li>
+</ol>
+<p>Each method serves different use cases, and they can be combined for maximum flexibility.</p>
+<h2 id="new-in-v020-enterprise-grade-prompts">New in v0.2.0: Enterprise-Grade Prompts<a class="headerlink" href="#new-in-v020-enterprise-grade-prompts" title="Permanent link">&para;</a></h2>
+<h3 id="comprehensive-prompt-architecture">Comprehensive Prompt Architecture<a class="headerlink" href="#comprehensive-prompt-architecture" title="Permanent link">&para;</a></h3>
+<p>Version 0.2.0 introduces a <strong>comprehensive prompt redesign</strong> that significantly improves agent reliability and robustness:</p>
+<p><strong>9.4x More Detailed</strong>: System prompts expanded from ~32 lines to 150-300+ lines</p>
+<p><strong>9-Section Structure</strong>: Every system prompt now includes:
+1. <strong>Role and Identity</strong>: Clear definition of purpose and capabilities
+2. <strong>Core Capabilities</strong>: Explicit CAN/CANNOT boundaries to prevent hallucination
+3. <strong>Process</strong>: Step-by-step workflow guidance for consistent execution
+4. <strong>Output Format</strong>: Precise specifications for structured responses
+5. <strong>Decision-Making Guidelines</strong>: Context-specific rules and best practices
+6. <strong>Quality Standards</strong>: Clear criteria for excellent vs. poor outputs
+7. <strong>Edge Cases and Error Handling</strong>: Built-in guidance for special situations
+8. <strong>Examples</strong>: 2-3 concrete examples demonstrating expected behavior
+9. <strong>Critical Reminders</strong>: Key points emphasized for reliability</p>
+<p><strong>Key Benefits</strong>:
+- <strong>Increased Reliability</strong>: Explicit boundaries reduce errors and hallucination
+- <strong>Better Transparency</strong>: Clear role definitions make behavior predictable
+- <strong>Improved Robustness</strong>: Edge case handling prevents common failures
+- <strong>Backward Compatible</strong>: No code changes required to benefit from enhancements</p>
+<p><strong>Following Best Practices</strong>: The new prompt structure follows prompt engineering guidelines from Anthropic and OpenAI, incorporating industry-proven techniques for eliciting high-quality LLM responses.</p>
+<h3 id="before-and-after-the-improvement">Before and After: The Improvement<a class="headerlink" href="#before-and-after-the-improvement" title="Permanent link">&para;</a></h3>
+<p><strong>Before (v0.1.x - ~32 lines)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You are a reasoning agent. Given a task, break it down into steps and execute them.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Output format:
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>STEP: description
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>RESULT: result
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Execute the task step by step.
+</code></pre></div></p>
+<p><strong>After (v0.2.0 - 150-300+ lines with 9 sections)</strong>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a># Role and Identity
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>You are the Execution Specialist in a Plan &amp; Solve workflow...
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a># Core Capabilities
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>**What You CAN Do:**
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>- Execute individual reasoning steps methodically
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>- Build on previous step results
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>- Handle partial information gracefully
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>...
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>**What You CANNOT Do:**
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>- Skip steps or jump ahead in the plan
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>- Make assumptions beyond available information
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>- Modify the original plan structure
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>...
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a># Process
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>1. UNDERSTAND THE STEP
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>   - Read the step description carefully
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>   - Identify what outcome is required
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>   ...
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a># Output Format
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>[Precise format specifications with examples]
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a># Decision-Making Guidelines
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>[Context-specific rules and best practices]
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a># Quality Standards
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>Excellent step execution is:
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>- Focused on the specific step requirements
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>- Thorough without unnecessary elaboration
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>...
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a># Edge Cases and Error Handling
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>### Missing Previous Results
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>If a step requires previous results that aren&#39;t available...
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a># Examples
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>[2-3 complete examples showing the full workflow]
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a># Critical Reminders
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>1. Focus ONLY on the current step
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>2. Use exact output format
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>...
+</code></pre></div></p>
+<p>The comprehensive structure provides significantly better guidance, reducing errors and improving consistency.</p>
+<h2 id="priority-system">Priority System<a class="headerlink" href="#priority-system" title="Permanent link">&para;</a></h2>
+<p>When multiple customization methods are used together, they follow this priority order:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>┌─────────────────────────────────────────────────────┐
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>│  1. Prompt Overrides (Highest Priority)             │
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│     → Completely replaces prompts programmatically  │
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>└──────────────────┬──────────────────────────────────┘
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>                   ↓
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>┌─────────────────────────────────────────────────────┐
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│  2. File-Based Prompts                              │
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│     → Loaded from prompt_dir                        │
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>└──────────────────┬──────────────────────────────────┘
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>                   ↓
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>┌─────────────────────────────────────────────────────┐
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│  3. Custom Instructions (Lowest Priority)           │
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│     → Appended to system prompts                    │
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>└─────────────────────────────────────────────────────┘
+</code></pre></div>
+<p>This design allows you to:
+- Start with base templates (file-based)
+- Add domain context (custom instructions)
+- Override specific steps as needed (prompt overrides)</p>
+<h2 id="method-1-file-based-prompts">Method 1: File-Based Prompts<a class="headerlink" href="#method-1-file-based-prompts" title="Permanent link">&para;</a></h2>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
+<p>Prompts are organized by pattern and step name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>prompts/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── ReActAgent/
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   └── ThoughtStep/
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│       ├── system.md    # System prompt
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│       └── user.md      # User prompt template
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├── ReflectionAgent/
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── Generate/
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   │   ├── system.md
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│   │   └── user.md
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│   ├── Reflect/
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│   │   ├── system.md
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│   │   └── user.md
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>│   └── Refine/
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>│       ├── system.md
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>│       └── user.md
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>└── SelfDiscoveryAgent/
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    ├── DiscoverModules/
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>    ├── AdaptModules/
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    ├── PlanReasoning/
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    ├── ExecuteStep/
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>    └── SynthesizeOutput/
+</code></pre></div>
+<h3 id="creating-custom-prompt-directory">Creating Custom Prompt Directory<a class="headerlink" href="#creating-custom-prompt-directory" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Create the directory structure:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>my_prompts/ReActAgent/ThoughtStep
+</code></pre></div>
+<ol>
+<li><strong>Write system.md:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>You are an intelligent research assistant with access to specialized tools.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Your goal is to provide accurate, well-researched answers by:
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">1.</span> Carefully analyzing the question
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">2.</span> Selecting appropriate tools
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">3.</span> Synthesizing information into clear answers
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Available tools:
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>{tool_descriptions}
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Format your response as:
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>Thought: [Your reasoning about what to do next]
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Action: [tool_name or FINISH]
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>Action Input: [parameters for the tool]
+</code></pre></div>
+<ol>
+<li><strong>Write user.md:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Task: {input}
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Previous steps:
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>{history}
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>What should you do next?
+</code></pre></div>
+<ol>
+<li><strong>Use custom directory:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReActAgent</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ReActAgent</span><span class="p">(</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">prompt_dir</span><span class="o">=</span><span class="s2">&quot;my_prompts&quot;</span>  <span class="c1"># Use custom prompts</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="template-variables">Template Variables<a class="headerlink" href="#template-variables" title="Permanent link">&para;</a></h3>
+<p>Each pattern's prompts support specific template variables:</p>
+<p><strong>ReActAgent</strong>:
+- <code>{input}</code> - The user's task
+- <code>{history}</code> - Previous thoughts and observations
+- <code>{tool_descriptions}</code> - Formatted list of available tools</p>
+<p><strong>ReflectionAgent</strong>:
+- <code>{task}</code> - The user's task
+- <code>{output}</code> - Current output to reflect on
+- <code>{reflection}</code> - Critique/feedback</p>
+<p><strong>SelfDiscoveryAgent</strong>:
+- <code>{task}</code> - The user's task
+- <code>{modules}</code> - Available reasoning modules
+- <code>{max_modules}</code> - Maximum modules to select
+- <code>{reasoning_steps}</code> - Accumulated reasoning results</p>
+<p><strong>See individual pattern documentation for complete variable lists.</strong></p>
+<h3 id="example-custom-react-prompts">Example: Custom ReAct Prompts<a class="headerlink" href="#example-custom-react-prompts" title="Permanent link">&para;</a></h3>
+<p><strong>my_prompts/ReActAgent/ThoughtStep/system.md:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>You are a technical support agent helping developers debug issues.
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>When analyzing problems:
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">1.</span> Gather all relevant information first
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">2.</span> Form hypotheses about the root cause
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="k">3.</span> Test hypotheses systematically
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">4.</span> Provide clear, actionable solutions
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Available diagnostic tools:
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>{tool_descriptions}
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>Always use this format:
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>Thought: [Your analysis of the situation]
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>Action: [tool_name or FINISH]
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>Action Input: [tool parameters]
+</code></pre></div></p>
+<p><strong>my_prompts/ReActAgent/ThoughtStep/user.md:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Support Ticket: {input}
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Investigation History:
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>{history}
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>What&#39;s your next diagnostic step?
+</code></pre></div></p>
+<h2 id="method-2-custom-instructions">Method 2: Custom Instructions<a class="headerlink" href="#method-2-custom-instructions" title="Permanent link">&para;</a></h2>
+<h3 id="what-are-custom-instructions">What Are Custom Instructions?<a class="headerlink" href="#what-are-custom-instructions" title="Permanent link">&para;</a></h3>
+<p>Custom instructions are domain-specific guidelines, constraints, or context that get appended to <strong>all system prompts</strong> throughout the agent's workflow. They don't replace prompts—they enhance them.</p>
+<h3 id="when-to-use-custom-instructions">When to Use Custom Instructions<a class="headerlink" href="#when-to-use-custom-instructions" title="Permanent link">&para;</a></h3>
+<p>Use custom instructions when you need to:
+- Add domain expertise (medical, legal, financial, etc.)
+- Enforce compliance or regulatory requirements
+- Set consistent tone and style across all steps
+- Specify target audience
+- Add ethical guidelines or constraints</p>
+<h3 id="basic-usage">Basic Usage<a class="headerlink" href="#basic-usage" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelfDiscoveryAgent</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">medical_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="s2">You are providing information in the MEDICAL domain. Follow these guidelines:</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="s2">1. ACCURACY: Always prioritize medical accuracy and cite evidence-based sources</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="s2">2. DISCLAIMERS: Include appropriate medical disclaimers where necessary</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="s2">3. TERMINOLOGY: Use proper medical terminology but explain complex terms</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="s2">4. ETHICS: Consider ethical implications and patient privacy</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="s2">5. LIMITATIONS: Acknowledge the limitations of AI in medical contexts</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="s2">6. RECOMMENDATION: Always recommend consulting healthcare professionals for medical decisions</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">SelfDiscoveryAgent</span><span class="p">(</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>        <span class="s2">&quot;thinking&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">},</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>        <span class="s2">&quot;execution&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">}</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="p">},</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">medical_instructions</span>  <span class="c1"># Applied to ALL system prompts</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="p">)</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;What are the key considerations for diagnosing Type 2 Diabetes?&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="domain-specific-examples">Domain-Specific Examples<a class="headerlink" href="#domain-specific-examples" title="Permanent link">&para;</a></h3>
+<h4 id="legal-domain">Legal Domain<a class="headerlink" href="#legal-domain" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">legal_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="s2">You are providing information in the LEGAL domain. Follow these guidelines:</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="s2">1. JURISDICTION: Be clear about which jurisdiction&#39;s laws you&#39;re discussing</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="s2">2. DISCLAIMERS: Include appropriate legal disclaimers (not legal advice)</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="s2">3. CITATIONS: Reference specific laws, regulations, or case precedents when possible</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="s2">4. NEUTRALITY: Present balanced views when discussing legal interpretations</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="s2">5. UPDATES: Note that laws change and information may become outdated</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="s2">6. RECOMMENDATION: Always recommend consulting licensed attorneys for legal advice</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">STORMAgent</span><span class="p">(</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>    <span class="n">retrieval_tools</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search&quot;</span><span class="p">:</span> <span class="n">search_function</span><span class="p">},</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">legal_instructions</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="p">)</span>
+</code></pre></div>
+<h4 id="financial-compliance">Financial Compliance<a class="headerlink" href="#financial-compliance" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">compliance_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="s2">You are operating under FINANCIAL REGULATORY COMPLIANCE requirements:</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="s2">1. DISCLOSURES: Include all required regulatory disclosures</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="s2">2. ACCURACY: Financial information must be verifiable and accurate</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="s2">3. RISKS: Always discuss relevant risks associated with financial decisions</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="s2">4. OBJECTIVITY: Avoid promotional or biased language</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="s2">5. ACCESSIBILITY: Explain financial concepts in clear, accessible language</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="s2">6. SUITABILITY: Consider the suitability of financial products for different investors</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="s2">7. DISCLAIMER: This is not financial advice - consult licensed financial advisors</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="s2">PROHIBITED:</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="s2">- Making specific investment recommendations</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="s2">- Guaranteeing returns or outcomes</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a><span class="s2">- Omitting material risks</span>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">SelfDiscoveryAgent</span><span class="p">(</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">compliance_instructions</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="p">)</span>
+</code></pre></div>
+<h4 id="educational-content">Educational Content<a class="headerlink" href="#educational-content" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">educational_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="s2">You are creating EDUCATIONAL CONTENT. Follow these principles:</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="s2">1. SCAFFOLDING: Build concepts progressively from simple to complex</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="s2">2. EXAMPLES: Provide concrete examples for abstract concepts</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="s2">3. ENGAGEMENT: Use questions and prompts to encourage active learning</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="s2">4. CLARITY: Use clear, grade-appropriate language</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="s2">5. FEEDBACK: Explain not just &quot;what&quot; but &quot;why&quot; and &quot;how&quot;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="s2">6. ERRORS: Treat misconceptions as learning opportunities</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="s2">7. ASSESSMENT: Include ways for learners to check their understanding</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="s2">TARGET AUDIENCE: High school students (ages 14-18)</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">educational_instructions</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="p">)</span>
+</code></pre></div>
+<h4 id="cultural-sensitivity">Cultural Sensitivity<a class="headerlink" href="#cultural-sensitivity" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">cultural_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="s2">You are operating with CULTURAL SENSITIVITY AND AWARENESS:</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="s2">1. RESPECT: Show respect for diverse cultural perspectives and practices</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="s2">2. INCLUSIVITY: Use inclusive language that doesn&#39;t assume a specific cultural context</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="s2">3. AWARENESS: Be mindful of cultural differences in communication styles and values</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="s2">4. NEUTRALITY: Avoid imposing one culture&#39;s values as universal</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="s2">5. REPRESENTATION: Acknowledge and represent diverse viewpoints</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="s2">6. SENSITIVITY: Be aware of potentially sensitive cultural or historical topics</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="s2">7. LEARNING: Approach cultural differences with curiosity and openness</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="s2">CONTEXT: Creating content for a global, multicultural audience</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">STORMAgent</span><span class="p">(</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>    <span class="n">retrieval_tools</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search&quot;</span><span class="p">:</span> <span class="n">search_function</span><span class="p">},</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">cultural_instructions</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="best-practices-for-custom-instructions">Best Practices for Custom Instructions<a class="headerlink" href="#best-practices-for-custom-instructions" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Be Specific</strong>: Vague instructions like "be helpful" are less effective than specific guidelines</li>
+<li><strong>Use Numbered Lists</strong>: Makes instructions clear and easy to follow</li>
+<li><strong>Include Examples</strong>: When possible, show what you mean</li>
+<li><strong>Set Boundaries</strong>: Explicitly state what the agent should NOT do</li>
+<li><strong>Keep It Focused</strong>: Too many instructions can be counterproductive</li>
+<li><strong>Test Thoroughly</strong>: Verify instructions have the desired effect</li>
+</ol>
+<h3 id="complete-example-from-examplescustom_instructions_examplepy">Complete Example from examples/custom_instructions_example.py<a class="headerlink" href="#complete-example-from-examplescustom_instructions_examplepy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns.self_discovery_agent</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelfDiscoveryAgent</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">example_medical_domain</span><span class="p">():</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Example: Using custom instructions for medical domain expertise.&quot;&quot;&quot;</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="c1"># Define medical domain instructions</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="n">medical_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="s2">    You are providing information in the MEDICAL domain. Follow these guidelines:</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="s2">    1. ACCURACY: Always prioritize medical accuracy and cite evidence-based sources</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="s2">    2. DISCLAIMERS: Include appropriate medical disclaimers where necessary</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="s2">    3. TERMINOLOGY: Use proper medical terminology but explain complex terms</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a><span class="s2">    4. ETHICS: Consider ethical implications and patient privacy</span>
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="s2">    5. LIMITATIONS: Acknowledge the limitations of AI in medical contexts</span>
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="s2">    6. RECOMMENDATION: Always recommend consulting healthcare professionals for medical decisions</span>
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="s2">    &quot;&quot;&quot;</span>
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>    <span class="c1"># Create SelfDiscovery agent with medical instructions</span>
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>    <span class="n">agent</span> <span class="o">=</span> <span class="n">SelfDiscoveryAgent</span><span class="p">(</span>
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>        <span class="n">llm_configs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>            <span class="s2">&quot;thinking&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">},</span>
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>            <span class="s2">&quot;execution&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">}</span>
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>        <span class="p">},</span>
+<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a>        <span class="n">custom_instructions</span><span class="o">=</span><span class="n">medical_instructions</span><span class="p">,</span>
+<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a>        <span class="n">max_selected_modules</span><span class="o">=</span><span class="mi">3</span>
+<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a>    <span class="p">)</span>
+<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a>
+<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>    <span class="c1"># The custom instructions will be appended to ALL system prompts in the workflow</span>
+<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;What are the key considerations for diagnosing Type 2 Diabetes?&quot;</span><span class="p">)</span>
+<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a>    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+<h2 id="method-3-prompt-overrides">Method 3: Prompt Overrides<a class="headerlink" href="#method-3-prompt-overrides" title="Permanent link">&para;</a></h2>
+<h3 id="what-are-prompt-overrides">What Are Prompt Overrides?<a class="headerlink" href="#what-are-prompt-overrides" title="Permanent link">&para;</a></h3>
+<p>Prompt overrides allow you to <strong>completely replace</strong> specific prompts programmatically at runtime, without modifying any files. This provides maximum control and flexibility.</p>
+<h3 id="when-to-use-prompt-overrides">When to Use Prompt Overrides<a class="headerlink" href="#when-to-use-prompt-overrides" title="Permanent link">&para;</a></h3>
+<p>Use prompt overrides when you need to:
+- A/B test different prompt variations
+- Generate prompts dynamically based on runtime conditions
+- Create specialized variants of patterns
+- Experiment with prompt engineering
+- Adjust complexity levels (beginner vs expert)
+- Implement different interaction styles (Socratic, concise, etc.)</p>
+<h3 id="basic-usage_1">Basic Usage<a class="headerlink" href="#basic-usage_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelfDiscoveryAgent</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c1"># Override the DiscoverModules step</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    <span class="s2">&quot;DiscoverModules&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You are an expert at selecting reasoning strategies. Be concise.&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="s2">Task: </span><span class="si">{task}</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="s2">Available reasoning modules:</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="si">{modules}</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="s2">Select the </span><span class="si">{max_modules}</span><span class="s2"> MOST relevant modules for this specific task.</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="s2">Output format (one per line):</span>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="s2">SELECTED: module_name</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>    <span class="p">}</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="p">}</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">SelfDiscoveryAgent</span><span class="p">(</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>        <span class="s2">&quot;thinking&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">},</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a>        <span class="s2">&quot;execution&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">}</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>    <span class="p">},</span>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">overrides</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="multiple-overrides">Multiple Overrides<a class="headerlink" href="#multiple-overrides" title="Permanent link">&para;</a></h3>
+<p>You can override multiple steps independently:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="s2">&quot;DiscoverModules&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a strategic reasoning expert. Select wisely.&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Modules:</span><span class="se">\n</span><span class="si">{modules}</span><span class="se">\n\n</span><span class="s2">Select </span><span class="si">{max_modules}</span><span class="s2"> best modules:</span><span class="se">\n</span><span class="s2">SELECTED: module_name&quot;</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>    <span class="p">},</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="s2">&quot;AdaptModules&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You adapt generic reasoning strategies to specific problems.&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Module: </span><span class="si">{module_name}</span><span class="se">\n</span><span class="s2">Description: </span><span class="si">{module_description}</span><span class="se">\n\n</span><span class="s2">Adapt this to the task:&quot;</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>    <span class="p">},</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>    <span class="s2">&quot;SynthesizeOutput&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You synthesize reasoning steps into a clear, final answer.&quot;</span><span class="p">,</span>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Reasoning:</span><span class="se">\n</span><span class="si">{reasoning_steps}</span><span class="se">\n\n</span><span class="s2">Provide the final answer:&quot;</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    <span class="p">}</span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="p">}</span>
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">SelfDiscoveryAgent</span><span class="p">(</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">overrides</span><span class="p">,</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>    <span class="n">max_selected_modules</span><span class="o">=</span><span class="mi">2</span>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="style-customization">Style Customization<a class="headerlink" href="#style-customization" title="Permanent link">&para;</a></h3>
+<p>Create different interaction styles:</p>
+<p><strong>Concise Style:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">concise_overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="s2">&quot;Generate&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;You are a concise assistant. Follow these rules:</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="s2">- Use bullet points instead of paragraphs</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="s2">- Maximum 3 sentences per point</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="s2">- No fluff or filler words</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="s2">- Get straight to the point&quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Provide a concise, bulleted response.&quot;</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    <span class="p">},</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    <span class="s2">&quot;Refine&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;You are a ruthless editor. Make responses MORE concise:</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="s2">- Cut unnecessary words</span>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="s2">- Use shorter sentences</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="s2">- Remove redundancy</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a><span class="s2">- Keep only essential information&quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Current response:</span><span class="se">\n</span><span class="si">{output}</span><span class="se">\n\n</span><span class="s2">Critique:</span><span class="se">\n</span><span class="si">{reflection}</span><span class="se">\n\n</span><span class="s2">Make it more concise:&quot;</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a>    <span class="p">}</span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="p">}</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">concise_overrides</span>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Socratic Method:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">socratic_overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="s2">&quot;Reflect&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;You are a Socratic teacher who improves thinking through questions.</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="s2">Instead of telling what&#39;s wrong, ask probing questions that guide toward better answers:</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="s2">- What assumptions are being made?</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="s2">- What evidence supports this?</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="s2">- What alternative explanations exist?</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="s2">- What are the implications?</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="s2">- How would you test this?&quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Original task: </span><span class="si">{task}</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="s2">Current response:</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="si">{output}</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="s2">Ask 3-5 Socratic questions that would improve this response:&quot;&quot;&quot;</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a>    <span class="p">}</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="p">}</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-19-20" name="__codelineno-19-20" href="#__codelineno-19-20"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-19-21" name="__codelineno-19-21" href="#__codelineno-19-21"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">socratic_overrides</span>
+<a id="__codelineno-19-22" name="__codelineno-19-22" href="#__codelineno-19-22"></a><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Expert Level:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">expert_overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="s2">&quot;Generate&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;You are addressing PhD-level experts in the field.</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="s2">- Use advanced technical terminology without explanation</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="s2">- Reference current research and state-of-the-art methods</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="s2">- Discuss nuances, edge cases, and open research questions</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="s2">- Assume deep domain knowledge</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="s2">- Focus on cutting-edge developments&quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Provide an expert-level technical response.&quot;</span>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>    <span class="p">}</span>
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="p">}</span>
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">expert_overrides</span>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="p">)</span>
+</code></pre></div></p>
+<h3 id="dynamic-overrides">Dynamic Overrides<a class="headerlink" href="#dynamic-overrides" title="Permanent link">&para;</a></h3>
+<p>Generate prompts dynamically based on task characteristics:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_overrides_for_task</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Dynamically create overrides based on task.&quot;&quot;&quot;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="c1"># Detect if task is mathematical</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">word</span> <span class="ow">in</span> <span class="n">task</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;calculate&quot;</span><span class="p">,</span> <span class="s2">&quot;solve&quot;</span><span class="p">,</span> <span class="s2">&quot;equation&quot;</span><span class="p">,</span> <span class="s2">&quot;math&quot;</span><span class="p">]):</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>        <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>            <span class="s2">&quot;ExecuteStep&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>                <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a mathematical problem solver. Show all work step-by-step.&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Step: </span><span class="si">{step_description}</span><span class="se">\n\n</span><span class="s2">Solve this step, showing all calculations:&quot;</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>            <span class="p">}</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>        <span class="p">}</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>    <span class="c1"># Detect if task is creative</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>    <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="n">word</span> <span class="ow">in</span> <span class="n">task</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;design&quot;</span><span class="p">,</span> <span class="s2">&quot;create&quot;</span><span class="p">,</span> <span class="s2">&quot;write&quot;</span><span class="p">,</span> <span class="s2">&quot;story&quot;</span><span class="p">]):</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>        <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>            <span class="s2">&quot;ExecuteStep&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>                <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a creative thinker. Explore multiple possibilities.&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a>                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Step: </span><span class="si">{step_description}</span><span class="se">\n\n</span><span class="s2">Approach this creatively with multiple ideas:&quot;</span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>            <span class="p">}</span>
+<a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>        <span class="p">}</span>
+<a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>
+<a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a>    <span class="c1"># Default analytical approach</span>
+<a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a>        <span class="k">return</span> <span class="p">{</span>
+<a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a>            <span class="s2">&quot;ExecuteStep&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>                <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You are an analytical problem solver. Use logic and evidence.&quot;</span><span class="p">,</span>
+<a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a>                <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Step: </span><span class="si">{step_description}</span><span class="se">\n\n</span><span class="s2">Analyze this systematically:&quot;</span>
+<a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a>            <span class="p">}</span>
+<a id="__codelineno-21-29" name="__codelineno-21-29" href="#__codelineno-21-29"></a>        <span class="p">}</span>
+<a id="__codelineno-21-30" name="__codelineno-21-30" href="#__codelineno-21-30"></a>
+<a id="__codelineno-21-31" name="__codelineno-21-31" href="#__codelineno-21-31"></a><span class="c1"># Use dynamic overrides</span>
+<a id="__codelineno-21-32" name="__codelineno-21-32" href="#__codelineno-21-32"></a><span class="n">task</span> <span class="o">=</span> <span class="s2">&quot;Calculate the compound interest on $10,000 at 5</span><span class="si">% f</span><span class="s2">or 10 years&quot;</span>
+<a id="__codelineno-21-33" name="__codelineno-21-33" href="#__codelineno-21-33"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">SelfDiscoveryAgent</span><span class="p">(</span>
+<a id="__codelineno-21-34" name="__codelineno-21-34" href="#__codelineno-21-34"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-21-35" name="__codelineno-21-35" href="#__codelineno-21-35"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">create_overrides_for_task</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+<a id="__codelineno-21-36" name="__codelineno-21-36" href="#__codelineno-21-36"></a><span class="p">)</span>
+<a id="__codelineno-21-37" name="__codelineno-21-37" href="#__codelineno-21-37"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="complete-example-from-examplesprompt_overrides_examplepy">Complete Example from examples/prompt_overrides_example.py<a class="headerlink" href="#complete-example-from-examplesprompt_overrides_examplepy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReflectionAgent</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">example_style_customization</span><span class="p">():</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Example: Customize the style/tone of responses.&quot;&quot;&quot;</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    <span class="c1"># Create a variant that produces more concise outputs</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>    <span class="n">concise_overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>        <span class="s2">&quot;Generate&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>            <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;You are a concise assistant. Follow these rules:</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="s2">- Use bullet points instead of paragraphs</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="s2">- Maximum 3 sentences per point</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a><span class="s2">- No fluff or filler words</span>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="s2">- Get straight to the point&quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Provide a concise, bulleted response.&quot;</span>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>        <span class="p">},</span>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>        <span class="s2">&quot;Refine&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>            <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;You are a ruthless editor. Make responses MORE concise:</span>
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="s2">- Cut unnecessary words</span>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="s2">- Use shorter sentences</span>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="s2">- Remove redundancy</span>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="s2">- Keep only essential information&quot;&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Current response:</span><span class="se">\n</span><span class="si">{output}</span><span class="se">\n\n</span><span class="s2">Critique:</span><span class="se">\n</span><span class="si">{reflection}</span><span class="se">\n\n</span><span class="s2">Make it more concise:&quot;</span>
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a>        <span class="p">}</span>
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>    <span class="p">}</span>
+<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a>
+<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a>    <span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a>        <span class="n">llm_configs</span><span class="o">=</span><span class="p">{</span>
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>            <span class="s2">&quot;documentation&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">},</span>
+<a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a>            <span class="s2">&quot;reflection&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;openai&quot;</span><span class="p">,</span> <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;gpt-4&quot;</span><span class="p">}</span>
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a>        <span class="p">},</span>
+<a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a>        <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">concise_overrides</span><span class="p">,</span>
+<a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a>        <span class="n">max_reflection_cycles</span><span class="o">=</span><span class="mi">1</span>
+<a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a>    <span class="p">)</span>
+<a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a>
+<a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;Explain machine learning&quot;</span><span class="p">)</span>
+<a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a>    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div>
+<h2 id="combining-all-three-methods">Combining All Three Methods<a class="headerlink" href="#combining-all-three-methods" title="Permanent link">&para;</a></h2>
+<p>The real power comes from combining all three approaches:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReflectionAgent</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1"># 1. Start with custom prompts directory</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1"># 2. Add domain-specific instructions</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="n">domain_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="s2">DOMAIN: Software Architecture</span>
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="s2">AUDIENCE: Senior engineers</span>
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="s2">FORMAT: Include diagrams (described in text), code examples, and trade-offs</span>
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a><span class="c1"># 3. Override specific steps for fine-tuning</span>
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a><span class="n">overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>    <span class="s2">&quot;Generate&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You create structured, well-organized responses.&quot;</span><span class="p">,</span>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Create a structured response with clear sections.&quot;</span>
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>    <span class="p">}</span>
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a><span class="p">}</span>
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a><span class="c1"># Combine all three</span>
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>    <span class="n">prompt_dir</span><span class="o">=</span><span class="s2">&quot;my_custom_prompts&quot;</span><span class="p">,</span>      <span class="c1"># 1. Custom directory</span>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">domain_instructions</span><span class="p">,</span>  <span class="c1"># 2. Add domain context</span>
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">overrides</span>            <span class="c1"># 3. Override specific steps</span>
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a><span class="p">)</span>
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a><span class="n">result</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;Design a microservices architecture for an e-commerce platform&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="resolution-order">Resolution Order<a class="headerlink" href="#resolution-order" title="Permanent link">&para;</a></h3>
+<p>When all three methods are used:</p>
+<ol>
+<li><strong>System Prompt</strong>:</li>
+<li>If override exists: Use override's system prompt</li>
+<li>Else: Load from file system</li>
+<li>
+<p>Then: Append custom_instructions to system prompt</p>
+</li>
+<li>
+<p><strong>User Prompt</strong>:</p>
+</li>
+<li>If override exists: Use override's user prompt</li>
+<li>Else: Load from file system</li>
+</ol>
+<p>Example flow:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Step: Generate</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1"># 1. Check overrides → Found! Use override system prompt: &quot;You create structured responses&quot;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1"># 2. Append custom_instructions → &quot;You create structured responses\n\nDOMAIN: Software Architecture...&quot;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># 3. Check overrides → Found! Use override user prompt</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1"># Final: Use overridden prompts + custom instructions</span>
+</code></pre></div></p>
+<h2 id="pattern-specific-examples">Pattern-Specific Examples<a class="headerlink" href="#pattern-specific-examples" title="Permanent link">&para;</a></h2>
+<h3 id="react-pattern">ReAct Pattern<a class="headerlink" href="#react-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReActAgent</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1"># Custom instructions for customer support</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="n">support_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="s2">You are a customer support agent:</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="s2">- Be polite and empathetic</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="s2">- Gather all necessary information before taking action</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="s2">- Confirm actions with the user when possible</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="s2">- Provide clear explanations of what you&#39;re doing</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="c1"># Override for more structured thinking</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="n">react_overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>    <span class="s2">&quot;ThoughtStep&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;You are a methodical problem solver. Think step-by-step.&quot;</span><span class="p">,</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Task: </span><span class="si">{input}</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="s2">Previous steps: </span><span class="si">{history}</span>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="s2">Think carefully about what to do next. Consider:</span>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="s2">1. What information do I need?</span>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="s2">2. Which tool is most appropriate?</span>
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a><span class="s2">3. How will this help solve the task?</span>
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="s2">Your thought:&quot;&quot;&quot;</span>
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>    <span class="p">}</span>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="p">}</span>
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ReActAgent</span><span class="p">(</span>
+<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>    <span class="n">tools</span><span class="o">=</span><span class="n">tools</span><span class="p">,</span>
+<a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">support_instructions</span><span class="p">,</span>
+<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">react_overrides</span>
+<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="self-discovery-pattern">Self-Discovery Pattern<a class="headerlink" href="#self-discovery-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">SelfDiscoveryAgent</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c1"># Instructions for scientific reasoning</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="n">science_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="s2">Apply rigorous scientific methodology:</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="s2">1. Form clear hypotheses</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="s2">2. Consider alternative explanations</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="s2">3. Evaluate evidence objectively</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="s2">4. Acknowledge limitations and uncertainty</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="s2">5. Draw conclusions proportional to evidence strength</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="c1"># Override for concise module selection</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="n">discovery_overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>    <span class="s2">&quot;DiscoverModules&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>        <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;Select reasoning modules efficiently. Prefer proven strategies.&quot;</span><span class="p">,</span>
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Modules:</span><span class="se">\n</span><span class="si">{modules}</span><span class="se">\n\n</span><span class="s2">Select top </span><span class="si">{max_modules}</span><span class="s2">:&quot;</span>
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>    <span class="p">}</span>
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a><span class="p">}</span>
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">SelfDiscoveryAgent</span><span class="p">(</span>
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">science_instructions</span><span class="p">,</span>
+<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>    <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">discovery_overrides</span><span class="p">,</span>
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>    <span class="n">max_selected_modules</span><span class="o">=</span><span class="mi">3</span>
+<a id="__codelineno-26-26" name="__codelineno-26-26" href="#__codelineno-26-26"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="storm-pattern">STORM Pattern<a class="headerlink" href="#storm-pattern" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">STORMAgent</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="c1"># Instructions for balanced research</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="n">research_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="s2">Conduct balanced, multi-perspective research:</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="s2">1. Seek diverse viewpoints and sources</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="s2">2. Identify potential biases in sources</span>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="s2">3. Present evidence for different perspectives</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a><span class="s2">4. Distinguish facts from opinions</span>
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a><span class="s2">5. Acknowledge areas of uncertainty or debate</span>
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">STORMAgent</span><span class="p">(</span>
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>    <span class="n">retrieval_tools</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;search&quot;</span><span class="p">:</span> <span class="n">search_function</span><span class="p">},</span>
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="n">research_instructions</span>
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a><span class="p">)</span>
+</code></pre></div>
+<h2 id="testing-your-customizations">Testing Your Customizations<a class="headerlink" href="#testing-your-customizations" title="Permanent link">&para;</a></h2>
+<h3 id="unit-testing-prompts">Unit Testing Prompts<a class="headerlink" href="#unit-testing-prompts" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pytest</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">agent_patterns.patterns</span><span class="w"> </span><span class="kn">import</span> <span class="n">ReflectionAgent</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_custom_instructions_applied</span><span class="p">():</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Test that custom instructions are included in prompts.&quot;&quot;&quot;</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>    <span class="n">instructions</span> <span class="o">=</span> <span class="s2">&quot;DOMAIN: Medical</span><span class="se">\n</span><span class="s2">AUDIENCE: Patients&quot;</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>    <span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>        <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>        <span class="n">custom_instructions</span><span class="o">=</span><span class="n">instructions</span>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>    <span class="p">)</span>
+<a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+<a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>    <span class="c1"># Load a prompt and verify instructions are appended</span>
+<a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>    <span class="n">prompt_data</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">_load_prompt</span><span class="p">(</span><span class="s2">&quot;Generate&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>    <span class="k">assert</span> <span class="s2">&quot;DOMAIN: Medical&quot;</span> <span class="ow">in</span> <span class="n">prompt_data</span><span class="p">[</span><span class="s2">&quot;system&quot;</span><span class="p">]</span>
+<a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>    <span class="k">assert</span> <span class="s2">&quot;AUDIENCE: Patients&quot;</span> <span class="ow">in</span> <span class="n">prompt_data</span><span class="p">[</span><span class="s2">&quot;system&quot;</span><span class="p">]</span>
+<a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>
+<a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_prompt_overrides</span><span class="p">():</span>
+<a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Test that overrides completely replace prompts.&quot;&quot;&quot;</span>
+<a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>    <span class="n">overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>        <span class="s2">&quot;Generate&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>            <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom system prompt&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a>            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Custom user prompt with </span><span class="si">{task}</span><span class="s2">&quot;</span>
+<a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a>        <span class="p">}</span>
+<a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a>    <span class="p">}</span>
+<a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a>
+<a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a>    <span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a>        <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a>        <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">overrides</span>
+<a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a>    <span class="p">)</span>
+<a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a>
+<a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a>    <span class="n">prompt_data</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">_load_prompt</span><span class="p">(</span><span class="s2">&quot;Generate&quot;</span><span class="p">)</span>
+<a id="__codelineno-28-33" name="__codelineno-28-33" href="#__codelineno-28-33"></a>    <span class="k">assert</span> <span class="n">prompt_data</span><span class="p">[</span><span class="s2">&quot;system&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Custom system prompt&quot;</span>
+<a id="__codelineno-28-34" name="__codelineno-28-34" href="#__codelineno-28-34"></a>    <span class="k">assert</span> <span class="n">prompt_data</span><span class="p">[</span><span class="s2">&quot;user&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Custom user prompt with </span><span class="si">{task}</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h3 id="ab-testing-prompts">A/B Testing Prompts<a class="headerlink" href="#ab-testing-prompts" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">compare_prompt_variations</span><span class="p">(</span><span class="n">task</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;A/B test different prompt variations.&quot;&quot;&quot;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>    <span class="c1"># Version A: Standard prompts</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>    <span class="n">agent_a</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span><span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">)</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>    <span class="n">result_a</span> <span class="o">=</span> <span class="n">agent_a</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>    <span class="c1"># Version B: Concise prompts</span>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>    <span class="n">concise_overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>        <span class="s2">&quot;Generate&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>            <span class="s2">&quot;system&quot;</span><span class="p">:</span> <span class="s2">&quot;Be extremely concise. Use bullet points.&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>            <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Brief response:&quot;</span>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>        <span class="p">}</span>
+<a id="__codelineno-29-14" name="__codelineno-29-14" href="#__codelineno-29-14"></a>    <span class="p">}</span>
+<a id="__codelineno-29-15" name="__codelineno-29-15" href="#__codelineno-29-15"></a>    <span class="n">agent_b</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-29-16" name="__codelineno-29-16" href="#__codelineno-29-16"></a>        <span class="n">llm_configs</span><span class="o">=</span><span class="n">llm_configs</span><span class="p">,</span>
+<a id="__codelineno-29-17" name="__codelineno-29-17" href="#__codelineno-29-17"></a>        <span class="n">prompt_overrides</span><span class="o">=</span><span class="n">concise_overrides</span>
+<a id="__codelineno-29-18" name="__codelineno-29-18" href="#__codelineno-29-18"></a>    <span class="p">)</span>
+<a id="__codelineno-29-19" name="__codelineno-29-19" href="#__codelineno-29-19"></a>    <span class="n">result_b</span> <span class="o">=</span> <span class="n">agent_b</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+<a id="__codelineno-29-20" name="__codelineno-29-20" href="#__codelineno-29-20"></a>
+<a id="__codelineno-29-21" name="__codelineno-29-21" href="#__codelineno-29-21"></a>    <span class="c1"># Compare results</span>
+<a id="__codelineno-29-22" name="__codelineno-29-22" href="#__codelineno-29-22"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Version A length: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">result_a</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-29-23" name="__codelineno-29-23" href="#__codelineno-29-23"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Version B length: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">result_b</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-29-24" name="__codelineno-29-24" href="#__codelineno-29-24"></a>
+<a id="__codelineno-29-25" name="__codelineno-29-25" href="#__codelineno-29-25"></a>    <span class="k">return</span> <span class="n">result_a</span><span class="p">,</span> <span class="n">result_b</span>
+</code></pre></div>
+<h2 id="common-pitfalls">Common Pitfalls<a class="headerlink" href="#common-pitfalls" title="Permanent link">&para;</a></h2>
+<h3 id="1-missing-template-variables">1. Missing Template Variables<a class="headerlink" href="#1-missing-template-variables" title="Permanent link">&para;</a></h3>
+<p>❌ <strong>Bad</strong>: Using undefined variables
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    <span class="s2">&quot;Generate&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{unknown_variable}</span><span class="se">\n\n</span><span class="s2">Respond:&quot;</span>  <span class="c1"># KeyError!</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    <span class="p">}</span>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="p">}</span>
+</code></pre></div></p>
+<p>✅ <strong>Good</strong>: Check pattern documentation for valid variables
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># ReflectionAgent Generate step uses {task}</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">overrides</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>    <span class="s2">&quot;Generate&quot;</span><span class="p">:</span> <span class="p">{</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>        <span class="s2">&quot;user&quot;</span><span class="p">:</span> <span class="s2">&quot;Task: </span><span class="si">{task}</span><span class="se">\n\n</span><span class="s2">Respond:&quot;</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>    <span class="p">}</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="p">}</span>
+</code></pre></div></p>
+<h3 id="2-too-many-instructions">2. Too Many Instructions<a class="headerlink" href="#2-too-many-instructions" title="Permanent link">&para;</a></h3>
+<p>❌ <strong>Bad</strong>: Overloading with instructions
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">custom_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="s2">[50 lines of detailed instructions]</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="c1"># LLM may ignore or poorly follow overly complex instructions</span>
+</code></pre></div></p>
+<p>✅ <strong>Good</strong>: Keep it focused
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">custom_instructions</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="s2">1. Use simple language</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="s2">2. Provide examples</span>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="s2">3. Be concise</span>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="s2">&quot;&quot;&quot;</span>
+</code></pre></div></p>
+<h3 id="3-conflicting-instructions">3. Conflicting Instructions<a class="headerlink" href="#3-conflicting-instructions" title="Permanent link">&para;</a></h3>
+<p>❌ <strong>Bad</strong>: Instructions conflict with pattern behavior
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># ReAct needs to call tools, but instructions say don&#39;t</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">custom_instructions</span> <span class="o">=</span> <span class="s2">&quot;Never use external tools or APIs&quot;</span>
+</code></pre></div></p>
+<p>✅ <strong>Good</strong>: Align with pattern design
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">custom_instructions</span> <span class="o">=</span> <span class="s2">&quot;Use tools efficiently and explain your tool choices&quot;</span>
+</code></pre></div></p>
+<h3 id="4-forgetting-to-test">4. Forgetting to Test<a class="headerlink" href="#4-forgetting-to-test" title="Permanent link">&para;</a></h3>
+<p>Always test customizations with representative tasks before production use.</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Learn more about <a href="../custom-instructions/">Custom Instructions</a> in detail</li>
+<li>Explore <a href="../prompt-overrides/">Prompt Overrides</a> advanced techniques</li>
+<li>See <a href="../setting-goals/">Setting Agent Goals</a> for objective configuration</li>
+<li>Review <a href="../best-practices/">Best Practices</a> for production usage</li>
+</ul>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
+<h3 id="customization-methods-summary">Customization Methods Summary<a class="headerlink" href="#customization-methods-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Use Case</th>
+<th>Priority</th>
+<th>Scope</th>
+<th>Dynamic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>File-Based</strong></td>
+<td>Base templates</td>
+<td>Medium</td>
+<td>All instances</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Custom Instructions</strong></td>
+<td>Domain context</td>
+<td>Low (appended)</td>
+<td>All prompts</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Prompt Overrides</strong></td>
+<td>Fine-grained control</td>
+<td>High (replaces)</td>
+<td>Specific steps</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="all-template-variables-by-pattern">All Template Variables by Pattern<a class="headerlink" href="#all-template-variables-by-pattern" title="Permanent link">&para;</a></h3>
+<p><strong>ReActAgent</strong>:
+- <code>{input}</code>, <code>{history}</code>, <code>{tool_descriptions}</code></p>
+<p><strong>ReflectionAgent</strong>:
+- <code>{task}</code>, <code>{output}</code>, <code>{reflection}</code></p>
+<p><strong>SelfDiscoveryAgent</strong>:
+- <code>{task}</code>, <code>{modules}</code>, <code>{max_modules}</code>, <code>{module_name}</code>, <code>{module_description}</code>, <code>{module_template}</code>, <code>{adapted_modules}</code>, <code>{step_description}</code>, <code>{previous_results}</code>, <code>{reasoning_steps}</code></p>
+<p><strong>PlanAndSolveAgent</strong>:
+- <code>{task}</code>, <code>{plan}</code>, <code>{step}</code>, <code>{results}</code></p>
+<p><strong>ReflexionAgent</strong>:
+- <code>{task}</code>, <code>{attempt}</code>, <code>{previous_attempts}</code>, <code>{reflection}</code></p>
+<p><strong>See individual pattern API documentation for complete lists.</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Original content: MIT © 2025 osok · Translations: CC BY 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

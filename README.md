@@ -8,21 +8,20 @@
 
 ```
 docs/
-  index.md/.ru.md           — главная страница
-  patterns/                 — agent-patterns (оригинал + перевод)
-    index.md/.ru.md
-    patterns/               — каталог паттернов
-    concepts/               — концептуальные статьи
-    guides/                 — руководства
-    api/                    — API-документация
-  other/                    — другие переводы
-    index.md/.ru.md
+  en/                       ← английская версия
+    index.md
+    patterns/               ← agent-patterns (оригинал)
+    other/                  ← другие переводы
+  ru/                       ← русская версия
+    index.md
+    patterns/               ← agent-patterns (перевод)
+    other/                  ← другие переводы
 ```
 
 ## Как переводить
 
-1. Найди `.md`-файл оригинала (например `patterns/patterns/react.md`)
-2. Создай `.ru.md`-версию рядом: `patterns/patterns/react.ru.md`
+1. Найди `.md`-файл в `docs/en/` (например `docs/en/patterns/patterns/react.md`)
+2. Создай такой же файл в `docs/ru/`: `docs/ru/patterns/patterns/react.md`
 3. Переведи содержание
 4. `git push` — сайт обновится автоматически
 
