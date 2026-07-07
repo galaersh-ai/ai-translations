@@ -1,0 +1,138 @@
+site_name: "AI Translations"
+site_description: "Переводы материалов по AI-системам, агентам и паттернам проектирования"
+site_author: "galaersh-ai"
+copyright: "CC BY 4.0"
+repo_url: https://github.com/galaersh-ai/ai-translations
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Тёмная тема
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Светлая тема
+  features:
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+  language: en
+
+extra:
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: Русский
+      link: /ru/
+      lang: ru
+
+plugins:
+  - i18n:
+      docs_structure: suffix
+      languages:
+        - locale: en
+          name: English
+          build: true
+          default: true
+        - locale: ru
+          name: Русский
+          build: true
+      nav_translations:
+        ru:
+          Home: Главная
+          "AI Patterns": "AI Паттерны"
+          Introduction: Введение
+          Quickstart: Быстрый старт
+          Installation: Установка
+          Concepts: Концепции
+          "What are Patterns?": "Что такое паттерны?"
+          Architecture: Архитектура
+          Patterns: Паттерны
+          "Choosing a Pattern": "Выбор паттерна"
+          "Comparison Matrix": "Матрица сравнения"
+          ReAct: ReAct
+          Reflection: Reflection
+          Reflexion: Reflexion
+          "Plan and Solve": "Plan and Solve"
+          REWOO: REWOO
+          LLMCompiler: LLMCompiler
+          LATS: LATS
+          STORM: STORM
+          "Self-Discovery": "Self-Discovery"
+          Guides: Руководства
+          API: API
+          Examples: Примеры
+          FAQ: "ЧаВо"
+          Troubleshooting: "Решение проблем"
+          Contributing: "Участие в проекте"
+          Changelog: "История изменений"
+          "Other Translations": "Другие переводы"
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - AI Patterns:
+      - patterns/index.md
+      - Quickstart: patterns/quickstart.md
+      - Installation: patterns/installation.md
+      - Concepts:
+          - "What are Patterns?": patterns/concepts/what-are-patterns.md
+          - Architecture: patterns/concepts/architecture.md
+      - Patterns:
+          - "Choosing a Pattern": patterns/patterns/choosing-a-pattern.md
+          - "Comparison Matrix": patterns/patterns/comparison-matrix.md
+          - ReAct: patterns/patterns/react.md
+          - Reflection: patterns/patterns/reflection.md
+          - Reflexion: patterns/patterns/reflexion.md
+          - "Plan and Solve": patterns/patterns/plan-and-solve.md
+          - REWOO: patterns/patterns/rewoo.md
+          - LLMCompiler: patterns/patterns/llm-compiler.md
+          - LATS: patterns/patterns/lats.md
+          - STORM: patterns/patterns/storm.md
+          - "Self-Discovery": patterns/patterns/self-discovery.md
+      - Guides:
+          - "Best Practices": patterns/guides/best-practices.md
+          - Configuration: patterns/guides/configuration.md
+          - "Custom Instructions": patterns/guides/custom-instructions.md
+          - Deployment: patterns/guides/deployment.md
+          - "Error Handling": patterns/guides/error-handling.md
+          - "Extending Patterns": patterns/guides/extending-patterns.md
+          - "Prompt Customization": patterns/guides/prompt-customization.md
+          - "Prompt Overrides": patterns/guides/prompt-overrides.md
+          - "Setting Goals": patterns/guides/setting-goals.md
+          - Testing: patterns/guides/testing.md
+      - API:
+          - "Base Agent": patterns/api/base-agent.md
+          - Patterns: patterns/api/patterns.md
+          - Types: patterns/api/types.md
+      - Examples: patterns/examples/index.md
+      - FAQ: patterns/faq.md
+      - Troubleshooting: patterns/troubleshooting.md
+      - Contributing: patterns/contributing.md
+      - Changelog: patterns/changelog.md
+  - Other Translations:
+      - other/index.md
