@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>None./</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/"/>
+    </url>
+    <url>
+        <loc>Noneother/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneother/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/other/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/changelog/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/changelog/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/contributing/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/contributing/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/faq/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/faq/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/faq/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/installation/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/installation/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/quickstart/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/quickstart/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/troubleshooting/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/api/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/api/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/api/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/api/base-agent/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/api/base-agent/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/api/base-agent/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/api/patterns/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/api/patterns/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/api/patterns/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/api/types/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/api/types/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/api/types/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/concepts/architecture/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/concepts/architecture/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/concepts/architecture/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/concepts/what-are-patterns/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/concepts/what-are-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/concepts/what-are-patterns/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/examples/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/examples/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/examples/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/best-practices/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/best-practices/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/best-practices/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/configuration/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/configuration/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/custom-instructions/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/custom-instructions/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/custom-instructions/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/deployment/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/deployment/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/deployment/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/error-handling/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/error-handling/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/error-handling/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/extending-patterns/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/extending-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/extending-patterns/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/prompt-customization/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/prompt-customization/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/prompt-customization/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/prompt-overrides/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/prompt-overrides/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/prompt-overrides/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/setting-goals/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/setting-goals/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/setting-goals/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/guides/testing/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/testing/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/testing/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/choosing-a-pattern/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/choosing-a-pattern/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/choosing-a-pattern/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/comparison-matrix/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/comparison-matrix/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/comparison-matrix/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/lats/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/lats/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/lats/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/llm-compiler/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/llm-compiler/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/llm-compiler/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/plan-and-solve/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/plan-and-solve/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/plan-and-solve/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/react/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/react/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/react/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/reflection/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/reflection/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/reflection/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/reflexion/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/reflexion/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/reflexion/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/rewoo/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/rewoo/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/rewoo/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/self-discovery/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/self-discovery/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/self-discovery/"/>
+    </url>
+    <url>
+        <loc>Nonepatterns/patterns/storm/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/storm/"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/storm/"/>
+    </url>
+    <url>
+        <loc>Noneru/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="None"/>
+    </url>
+    <url>
+        <loc>Noneru/other/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/other/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Noneother/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/changelog/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/changelog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/changelog/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/contributing/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/contributing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/contributing/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/faq/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/faq/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/installation/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/installation/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/quickstart/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/quickstart/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/quickstart/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/troubleshooting/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/api/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/api/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/api/base-agent/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/api/base-agent/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/api/base-agent/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/api/patterns/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/api/patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/api/patterns/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/api/types/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/api/types/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/api/types/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/concepts/architecture/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/concepts/architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/concepts/architecture/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/concepts/what-are-patterns/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/concepts/what-are-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/concepts/what-are-patterns/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/examples/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/examples/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/examples/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/best-practices/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/best-practices/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/best-practices/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/configuration/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/configuration/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/custom-instructions/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/custom-instructions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/custom-instructions/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/deployment/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/deployment/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/deployment/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/error-handling/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/error-handling/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/error-handling/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/extending-patterns/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/extending-patterns/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/extending-patterns/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/prompt-customization/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/prompt-customization/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/prompt-customization/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/prompt-overrides/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/prompt-overrides/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/prompt-overrides/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/setting-goals/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/setting-goals/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/setting-goals/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/guides/testing/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/guides/testing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/guides/testing/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/choosing-a-pattern/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/choosing-a-pattern/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/choosing-a-pattern/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/comparison-matrix/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/comparison-matrix/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/comparison-matrix/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/lats/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/lats/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/lats/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/llm-compiler/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/llm-compiler/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/llm-compiler/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/plan-and-solve/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/plan-and-solve/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/plan-and-solve/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/react/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/react/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/react/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/reflection/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/reflection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/reflection/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/reflexion/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/reflexion/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/reflexion/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/rewoo/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/rewoo/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/rewoo/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/self-discovery/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/self-discovery/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/self-discovery/"/>
+    </url>
+    <url>
+        <loc>Noneru/patterns/patterns/storm/</loc>
+        <lastmod>2026-08-27</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ru" href="Noneru/patterns/patterns/storm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="Nonepatterns/patterns/storm/"/>
+    </url>
+</urlset>

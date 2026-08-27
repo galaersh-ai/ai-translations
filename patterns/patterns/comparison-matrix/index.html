@@ -1,0 +1,3568 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Переводы материалов по AI-системам, агентам и паттернам проектирования">
+      
+      
+        <meta name="author" content="galaersh-ai">
+      
+      
+      
+        <link rel="prev" href="../choosing-a-pattern/">
+      
+      
+        <link rel="next" href="../react/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../../ru/patterns/patterns/comparison-matrix/" hreflang="ru">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Comparison Matrix - AI Translations</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+<!-- AI-friendly meta -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="ai-content-declaration" content="human-edited">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-friendly content">
+<!-- Yandex.Metrika counter -->
+<noscript><div><img src="https://mc.yandex.ru/watch/112001566" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pattern-comparison-matrix" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="AI Translations" class="md-header__button md-logo" aria-label="AI Translations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            AI Translations
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Comparison Matrix
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Тёмная тема"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Тёмная тема" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Светлая тема"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Светлая тема" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../../ru/patterns/patterns/comparison-matrix/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/galaersh-ai/ai-translations" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="AI Translations" class="md-nav__button md-logo" aria-label="AI Translations" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    AI Translations
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/galaersh-ai/ai-translations" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Patterns
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/what-are-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What are Patterns?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Patterns
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choosing-a-pattern/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choosing a Pattern
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparison Matrix
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparison Matrix
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-decision-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Decision Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-use-case-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Use Case Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Use Case Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-creation-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Creation &amp; Writing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Creation &amp; Writing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blog-posts-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blog Posts &amp; Articles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-papersreports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Papers/Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creative-fiction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creative Fiction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Solving
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Solving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-proofs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mathematical Proofs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic-puzzles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic Puzzles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Debugging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimization Problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Automation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-scraping-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Scraping &amp; Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etl-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ETL Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research &amp; Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Research &amp; Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#market-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#competitive-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Competitive Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literature-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literature Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-analysis-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Analysis &amp; Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trend-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trend Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refactoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refactoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Making
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decision Making">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategic-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategic Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customer Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-base-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Base Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-characteristics-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Characteristics Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Characteristics Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computational-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational Cost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-learning-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity &amp; Learning Curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-quality-vs-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Quality vs Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-learning-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Learning Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-flowchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Flowchart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-combination-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Combination Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Combination Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequential-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequential Combinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Combinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../react/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReAct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reflection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflection
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reflexion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reflexion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plan-and-solve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan and Solve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rewoo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    REWOO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llm-compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLMCompiler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LATS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    STORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Self-Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/best-practices/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Best Practices
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/custom-instructions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Instructions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/extending-patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extending Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/prompt-customization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Customization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/prompt-overrides/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompt Overrides
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/setting-goals/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting Goals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/base-agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base Agent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/patterns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patterns
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../other/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Translations
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Other Translations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quick-decision-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Decision Matrix
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detailed-use-case-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Detailed Use Case Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Detailed Use Case Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#content-creation-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Content Creation &amp; Writing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Content Creation &amp; Writing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#blog-posts-articles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blog Posts &amp; Articles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Documentation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-papersreports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research Papers/Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creative-fiction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creative Fiction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Solving
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Solving">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mathematical-proofs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mathematical Proofs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logic-puzzles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logic Puzzles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Debugging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimization-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Optimization Problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Task Automation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Task Automation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-orchestration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Orchestration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#web-scraping-data-collection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Web Scraping &amp; Data Collection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etl-pipelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ETL Pipelines
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workflow-automation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workflow Automation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Queries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#research-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research &amp; Analysis
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Research &amp; Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#market-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market Research
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#competitive-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Competitive Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#literature-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Literature Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-analysis-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Analysis &amp; Insights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trend-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trend Analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Software Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-review" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code Review
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#refactoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refactoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decision-making" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Making
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decision Making">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#strategic-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Strategic Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#risk-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Assessment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resource-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource Allocation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scenario Planning
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#customer-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Customer Support
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Customer Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faq-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ Generation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-base-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Base Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-characteristics-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Characteristics Comparison
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Characteristics Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#computational-cost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Computational Cost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity-learning-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity &amp; Learning Curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-quality-vs-speed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Quality vs Speed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommended-learning-path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recommended Learning Path
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-flowchart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Decision Flowchart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-combination-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Combination Strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pattern Combination Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sequential-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sequential Combinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parallel-combinations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parallel Combinations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="pattern-comparison-matrix">Pattern Comparison Matrix<a class="headerlink" href="#pattern-comparison-matrix" title="Permanent link">&para;</a></h1>
+<p>This comprehensive matrix helps you choose the right agent pattern for your use case.</p>
+<h2 id="quick-decision-matrix">Quick Decision Matrix<a class="headerlink" href="#quick-decision-matrix" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Primary Pattern</th>
+<th>Alternative</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>API/Tool Integration</strong></td>
+<td>ReAct ⭐⭐⭐</td>
+<td>REWOO ⭐⭐</td>
+<td>ReAct excels at interactive tool use</td>
+</tr>
+<tr>
+<td><strong>Content Writing</strong></td>
+<td>Reflection ⭐⭐⭐</td>
+<td>STORM ⭐⭐</td>
+<td>Reflection for quality, STORM for research</td>
+</tr>
+<tr>
+<td><strong>Mathematical Problems</strong></td>
+<td>Self-Discovery ⭐⭐⭐</td>
+<td>Plan &amp; Solve ⭐⭐</td>
+<td>Self-Discovery adapts reasoning strategies</td>
+</tr>
+<tr>
+<td><strong>Code Generation</strong></td>
+<td>Reflexion ⭐⭐⭐</td>
+<td>ReAct ⭐⭐</td>
+<td>Reflexion learns from compilation errors</td>
+</tr>
+<tr>
+<td><strong>Research Reports</strong></td>
+<td>STORM ⭐⭐⭐</td>
+<td>Plan &amp; Solve ⭐⭐</td>
+<td>STORM designed for multi-perspective research</td>
+</tr>
+<tr>
+<td><strong>Data Analysis</strong></td>
+<td>Self-Discovery ⭐⭐⭐</td>
+<td>LLM Compiler ⭐⭐</td>
+<td>Self-Discovery for complex reasoning</td>
+</tr>
+<tr>
+<td><strong>Multi-Step Workflows</strong></td>
+<td>Plan &amp; Solve ⭐⭐⭐</td>
+<td>LLM Compiler ⭐⭐</td>
+<td>Plan &amp; Solve for sequential, Compiler for parallel</td>
+</tr>
+<tr>
+<td><strong>Cost-Sensitive Tasks</strong></td>
+<td>REWOO ⭐⭐⭐</td>
+<td>ReAct ⭐⭐</td>
+<td>REWOO minimizes LLM calls</td>
+</tr>
+<tr>
+<td><strong>Exploratory Problems</strong></td>
+<td>LATS ⭐⭐⭐</td>
+<td>Self-Discovery ⭐⭐</td>
+<td>LATS explores multiple solution paths</td>
+</tr>
+<tr>
+<td><strong>Debugging/Troubleshooting</strong></td>
+<td>Reflexion ⭐⭐⭐</td>
+<td>ReAct ⭐⭐</td>
+<td>Reflexion excels at trial-and-error</td>
+</tr>
+<tr>
+<td><strong>Question Answering</strong></td>
+<td>ReAct ⭐⭐⭐</td>
+<td>Reflection ⭐</td>
+<td>ReAct for fact-based, Reflection for thoughtful</td>
+</tr>
+<tr>
+<td><strong>Creative Writing</strong></td>
+<td>Reflection ⭐⭐⭐</td>
+<td>Self-Discovery ⭐⭐</td>
+<td>Reflection for quality iteration</td>
+</tr>
+<tr>
+<td><strong>Planning Complex Projects</strong></td>
+<td>Plan &amp; Solve ⭐⭐⭐</td>
+<td>Self-Discovery ⭐⭐</td>
+<td>Plan &amp; Solve excels at decomposition</td>
+</tr>
+<tr>
+<td><strong>Web Research</strong></td>
+<td>STORM ⭐⭐⭐</td>
+<td>ReAct ⭐⭐</td>
+<td>STORM for comprehensive synthesis</td>
+</tr>
+<tr>
+<td><strong>Optimization Problems</strong></td>
+<td>LATS ⭐⭐⭐</td>
+<td>Self-Discovery ⭐⭐</td>
+<td>LATS explores solution space systematically</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend</strong>: ⭐⭐⭐ Best Choice | ⭐⭐ Good Alternative | ⭐ Possible but not ideal</p>
+<h2 id="detailed-use-case-analysis">Detailed Use Case Analysis<a class="headerlink" href="#detailed-use-case-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="content-creation-writing">Content Creation &amp; Writing<a class="headerlink" href="#content-creation-writing" title="Permanent link">&para;</a></h3>
+<h4 id="blog-posts-articles">Blog Posts &amp; Articles<a class="headerlink" href="#blog-posts-articles" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Reflection ⭐⭐⭐
+- <strong>Why</strong>: Iterative refinement produces high-quality content
+- <strong>Alternative</strong>: STORM ⭐⭐ (if research-heavy)
+- <strong>When to use Reflection</strong>: Quality matters more than speed
+- <strong>When to use STORM</strong>: Need comprehensive research from multiple angles</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Reflection for blog posts</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">ReflectionAgent</span><span class="p">(</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">llm_configs</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;documentation&quot;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">},</span> <span class="s2">&quot;reflection&quot;</span><span class="p">:</span> <span class="p">{</span><span class="o">...</span><span class="p">}},</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">custom_instructions</span><span class="o">=</span><span class="s2">&quot;Write engaging, SEO-friendly blog content&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">)</span>
+</code></pre></div>
+<h4 id="technical-documentation">Technical Documentation<a class="headerlink" href="#technical-documentation" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Plan &amp; Solve ⭐⭐⭐
+- <strong>Why</strong>: Structured approach ensures completeness
+- <strong>Alternative</strong>: Reflection ⭐⭐ (for polish)
+- <strong>When to use Plan &amp; Solve</strong>: Need comprehensive, organized documentation
+- <strong>When to use Reflection</strong>: Focus on clarity and readability</p>
+<h4 id="research-papersreports">Research Papers/Reports<a class="headerlink" href="#research-papersreports" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: STORM ⭐⭐⭐
+- <strong>Why</strong>: Multi-perspective research with source synthesis
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐ (for structured reports)
+- <strong>When to use STORM</strong>: Need diverse viewpoints and comprehensive coverage
+- <strong>When to use Plan &amp; Solve</strong>: Have clear outline, need execution</p>
+<h4 id="creative-fiction">Creative Fiction<a class="headerlink" href="#creative-fiction" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Reflection ⭐⭐⭐
+- <strong>Why</strong>: Iterative refinement improves narrative quality
+- <strong>Alternative</strong>: Self-Discovery ⭐ (for complex plots)
+- <strong>When to use Reflection</strong>: Focus on prose quality and coherence
+- <strong>When to use Self-Discovery</strong>: Complex story structure requires adaptive reasoning</p>
+<h3 id="problem-solving">Problem Solving<a class="headerlink" href="#problem-solving" title="Permanent link">&para;</a></h3>
+<h4 id="mathematical-proofs">Mathematical Proofs<a class="headerlink" href="#mathematical-proofs" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Self-Discovery ⭐⭐⭐
+- <strong>Why</strong>: Selects appropriate mathematical reasoning strategies
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use Self-Discovery</strong>: Complex, multi-step proofs
+- <strong>When to use Plan &amp; Solve</strong>: Straightforward problems with clear steps</p>
+<h4 id="logic-puzzles">Logic Puzzles<a class="headerlink" href="#logic-puzzles" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: LATS ⭐⭐⭐
+- <strong>Why</strong>: Tree search explores solution space systematically
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use LATS</strong>: Multiple possible approaches need exploration
+- <strong>When to use Self-Discovery</strong>: Need to select best reasoning strategy</p>
+<h4 id="code-debugging">Code Debugging<a class="headerlink" href="#code-debugging" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Reflexion ⭐⭐⭐
+- <strong>Why</strong>: Learns from test failures and refines approach
+- <strong>Alternative</strong>: ReAct ⭐⭐ (with debugging tools)
+- <strong>When to use Reflexion</strong>: Can run tests and get error feedback
+- <strong>When to use ReAct</strong>: Need to use debugger or inspection tools</p>
+<h4 id="optimization-problems">Optimization Problems<a class="headerlink" href="#optimization-problems" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: LATS ⭐⭐⭐
+- <strong>Why</strong>: Explores and evaluates multiple solutions
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use LATS</strong>: Need to find optimal solution among many candidates
+- <strong>When to use Self-Discovery</strong>: Need adaptive strategy for complex constraints</p>
+<h4 id="algorithm-design">Algorithm Design<a class="headerlink" href="#algorithm-design" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Self-Discovery ⭐⭐⭐
+- <strong>Why</strong>: Selects appropriate algorithmic reasoning approaches
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use Self-Discovery</strong>: Complex algorithms requiring multiple techniques
+- <strong>When to use Plan &amp; Solve</strong>: Clear algorithmic structure</p>
+<h3 id="task-automation">Task Automation<a class="headerlink" href="#task-automation" title="Permanent link">&para;</a></h3>
+<h4 id="api-orchestration">API Orchestration<a class="headerlink" href="#api-orchestration" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: ReAct ⭐⭐⭐
+- <strong>Why</strong>: Interactive reasoning about API calls and responses
+- <strong>Alternative</strong>: REWOO ⭐⭐ (for cost efficiency)
+- <strong>When to use ReAct</strong>: Need dynamic decision-making based on API responses
+- <strong>When to use REWOO</strong>: Predictable API workflow, cost-sensitive</p>
+<h4 id="web-scraping-data-collection">Web Scraping &amp; Data Collection<a class="headerlink" href="#web-scraping-data-collection" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: ReAct ⭐⭐⭐
+- <strong>Why</strong>: Adaptive navigation and data extraction
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐ (for structured sites)
+- <strong>When to use ReAct</strong>: Dynamic websites requiring adaptive scraping
+- <strong>When to use Plan &amp; Solve</strong>: Well-structured sites with predictable layout</p>
+<h4 id="etl-pipelines">ETL Pipelines<a class="headerlink" href="#etl-pipelines" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: LLM Compiler ⭐⭐⭐
+- <strong>Why</strong>: Parallel execution of independent transformations
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use LLM Compiler</strong>: Independent data transformations can run in parallel
+- <strong>When to use Plan &amp; Solve</strong>: Sequential dependencies between steps</p>
+<h4 id="workflow-automation">Workflow Automation<a class="headerlink" href="#workflow-automation" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Plan &amp; Solve ⭐⭐⭐
+- <strong>Why</strong>: Clear decomposition of multi-step workflows
+- <strong>Alternative</strong>: LLM Compiler ⭐⭐ (if parallelizable)
+- <strong>When to use Plan &amp; Solve</strong>: Sequential workflow with dependencies
+- <strong>When to use LLM Compiler</strong>: Independent tasks can run concurrently</p>
+<h4 id="database-queries">Database Queries<a class="headerlink" href="#database-queries" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: REWOO ⭐⭐⭐
+- <strong>Why</strong>: Efficient planning minimizes expensive database calls
+- <strong>Alternative</strong>: ReAct ⭐⭐
+- <strong>When to use REWOO</strong>: Cost of queries is high, can plan ahead
+- <strong>When to use ReAct</strong>: Need dynamic query adjustment based on results</p>
+<h3 id="research-analysis">Research &amp; Analysis<a class="headerlink" href="#research-analysis" title="Permanent link">&para;</a></h3>
+<h4 id="market-research">Market Research<a class="headerlink" href="#market-research" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: STORM ⭐⭐⭐
+- <strong>Why</strong>: Multi-perspective analysis from diverse sources
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use STORM</strong>: Need comprehensive view of market landscape
+- <strong>When to use Plan &amp; Solve</strong>: Structured research with clear objectives</p>
+<h4 id="competitive-analysis">Competitive Analysis<a class="headerlink" href="#competitive-analysis" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: STORM ⭐⭐⭐
+- <strong>Why</strong>: Synthesizes information from multiple competitors
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use STORM</strong>: Need balanced view across competitors
+- <strong>When to use Self-Discovery</strong>: Complex comparative reasoning required</p>
+<h4 id="literature-review">Literature Review<a class="headerlink" href="#literature-review" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: STORM ⭐⭐⭐
+- <strong>Why</strong>: Designed for multi-source research synthesis
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use STORM</strong>: Need to synthesize diverse academic sources
+- <strong>When to use Plan &amp; Solve</strong>: Structured review of specific topics</p>
+<h4 id="data-analysis-insights">Data Analysis &amp; Insights<a class="headerlink" href="#data-analysis-insights" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Self-Discovery ⭐⭐⭐
+- <strong>Why</strong>: Adapts analytical approach based on data characteristics
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use Self-Discovery</strong>: Exploratory analysis, unclear best approach
+- <strong>When to use Plan &amp; Solve</strong>: Standard analytical workflow</p>
+<h4 id="trend-analysis">Trend Analysis<a class="headerlink" href="#trend-analysis" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: STORM ⭐⭐⭐
+- <strong>Why</strong>: Synthesizes trends from multiple data sources
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use STORM</strong>: Need comprehensive trend synthesis
+- <strong>When to use Self-Discovery</strong>: Complex pattern recognition in trends</p>
+<h3 id="software-development">Software Development<a class="headerlink" href="#software-development" title="Permanent link">&para;</a></h3>
+<h4 id="code-generation">Code Generation<a class="headerlink" href="#code-generation" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Reflexion ⭐⭐⭐
+- <strong>Why</strong>: Learns from test failures and compilation errors
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use Reflexion</strong>: Can run tests and iterate on failures
+- <strong>When to use Plan &amp; Solve</strong>: Clear specification, straightforward implementation</p>
+<h4 id="code-review">Code Review<a class="headerlink" href="#code-review" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Reflection ⭐⭐⭐
+- <strong>Why</strong>: Multiple review passes improve quality
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use Reflection</strong>: Focus on code quality and best practices
+- <strong>When to use Self-Discovery</strong>: Complex code requiring different review strategies</p>
+<h4 id="test-generation">Test Generation<a class="headerlink" href="#test-generation" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Plan &amp; Solve ⭐⭐⭐
+- <strong>Why</strong>: Systematic decomposition of test scenarios
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use Plan &amp; Solve</strong>: Clear testing requirements
+- <strong>When to use Self-Discovery</strong>: Need creative test case generation</p>
+<h4 id="refactoring">Refactoring<a class="headerlink" href="#refactoring" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Reflexion ⭐⭐⭐
+- <strong>Why</strong>: Iterates until tests pass with improved code
+- <strong>Alternative</strong>: Reflection ⭐⭐
+- <strong>When to use Reflexion</strong>: Have tests to validate refactoring
+- <strong>When to use Reflection</strong>: Focus on code clarity and design</p>
+<h4 id="architecture-design">Architecture Design<a class="headerlink" href="#architecture-design" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Self-Discovery ⭐⭐⭐
+- <strong>Why</strong>: Selects appropriate architectural reasoning approaches
+- <strong>Alternative</strong>: LATS ⭐⭐ (to explore options)
+- <strong>When to use Self-Discovery</strong>: Complex system requiring multiple design considerations
+- <strong>When to use LATS</strong>: Need to evaluate multiple architectural options</p>
+<h3 id="decision-making">Decision Making<a class="headerlink" href="#decision-making" title="Permanent link">&para;</a></h3>
+<h4 id="strategic-planning">Strategic Planning<a class="headerlink" href="#strategic-planning" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: LATS ⭐⭐⭐
+- <strong>Why</strong>: Explores and evaluates multiple strategic options
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use LATS</strong>: Need to explore multiple paths and outcomes
+- <strong>When to use Self-Discovery</strong>: Need adaptive strategic reasoning</p>
+<h4 id="risk-assessment">Risk Assessment<a class="headerlink" href="#risk-assessment" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Self-Discovery ⭐⭐⭐
+- <strong>Why</strong>: Adapts risk analysis approach to situation
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use Self-Discovery</strong>: Complex, multifaceted risks
+- <strong>When to use Plan &amp; Solve</strong>: Standard risk assessment framework</p>
+<h4 id="resource-allocation">Resource Allocation<a class="headerlink" href="#resource-allocation" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: LLM Compiler ⭐⭐⭐
+- <strong>Why</strong>: Evaluates resource allocation scenarios in parallel
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use LLM Compiler</strong>: Independent resource allocation decisions
+- <strong>When to use Self-Discovery</strong>: Complex interdependencies</p>
+<h4 id="scenario-planning">Scenario Planning<a class="headerlink" href="#scenario-planning" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: LATS ⭐⭐⭐
+- <strong>Why</strong>: Explores multiple future scenarios systematically
+- <strong>Alternative</strong>: Self-Discovery ⭐⭐
+- <strong>When to use LATS</strong>: Need to evaluate diverse future scenarios
+- <strong>When to use Self-Discovery</strong>: Need adaptive scenario generation</p>
+<h3 id="customer-support">Customer Support<a class="headerlink" href="#customer-support" title="Permanent link">&para;</a></h3>
+<h4 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: Reflexion ⭐⭐⭐
+- <strong>Why</strong>: Learns from failed solutions, tries alternatives
+- <strong>Alternative</strong>: ReAct ⭐⭐ (with diagnostic tools)
+- <strong>When to use Reflexion</strong>: Can test solutions and get feedback
+- <strong>When to use ReAct</strong>: Need to use diagnostic tools interactively</p>
+<h4 id="faq-generation">FAQ Generation<a class="headerlink" href="#faq-generation" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: STORM ⭐⭐⭐
+- <strong>Why</strong>: Synthesizes FAQs from multiple customer interactions
+- <strong>Alternative</strong>: Plan &amp; Solve ⭐⭐
+- <strong>When to use STORM</strong>: Need comprehensive FAQ from diverse sources
+- <strong>When to use Plan &amp; Solve</strong>: Structured FAQ based on known topics</p>
+<h4 id="knowledge-base-search">Knowledge Base Search<a class="headerlink" href="#knowledge-base-search" title="Permanent link">&para;</a></h4>
+<p><strong>Primary</strong>: ReAct ⭐⭐⭐
+- <strong>Why</strong>: Interactive search and refinement
+- <strong>Alternative</strong>: REWOO ⭐ (for efficiency)
+- <strong>When to use ReAct</strong>: Need adaptive search based on results
+- <strong>When to use REWOO</strong>: Predictable search patterns</p>
+<h2 id="pattern-characteristics-comparison">Pattern Characteristics Comparison<a class="headerlink" href="#pattern-characteristics-comparison" title="Permanent link">&para;</a></h2>
+<h3 id="computational-cost">Computational Cost<a class="headerlink" href="#computational-cost" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>LLM Calls</th>
+<th>Cost</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ReAct</td>
+<td>High (iterative)</td>
+<td>$$</td>
+<td>Quality interactions</td>
+</tr>
+<tr>
+<td>Reflection</td>
+<td>Medium-High</td>
+<td>$$</td>
+<td>Quality content</td>
+</tr>
+<tr>
+<td>Plan &amp; Solve</td>
+<td>Medium</td>
+<td>$</td>
+<td>Balanced efficiency</td>
+</tr>
+<tr>
+<td>Self-Discovery</td>
+<td>High</td>
+<td>$$$</td>
+<td>Complex reasoning</td>
+</tr>
+<tr>
+<td>Reflexion</td>
+<td>Very High</td>
+<td>$$$</td>
+<td>Learning from failures</td>
+</tr>
+<tr>
+<td>REWOO</td>
+<td>Low</td>
+<td>$</td>
+<td>Cost-sensitive tasks</td>
+</tr>
+<tr>
+<td>LATS</td>
+<td>Very High</td>
+<td>$$$$</td>
+<td>Exploration</td>
+</tr>
+<tr>
+<td>LLM Compiler</td>
+<td>Medium</td>
+<td>$$</td>
+<td>Parallel efficiency</td>
+</tr>
+<tr>
+<td>STORM</td>
+<td>High</td>
+<td>$$$</td>
+<td>Comprehensive research</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend</strong>: $ Low | $$ Medium | $$$ High | $$$$ Very High</p>
+<h3 id="complexity-learning-curve">Complexity &amp; Learning Curve<a class="headerlink" href="#complexity-learning-curve" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Pattern</th>
+<th>Complexity</th>
+<th>Setup Time</th>
+<th>When to Start With</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ReAct</td>
+<td>⭐ Simple</td>
+<td>Quick</td>
+<td>First pattern to learn</td>
+</tr>
+<tr>
+<td>Reflection</td>
+<td>⭐ Simple</td>
+<td>Quick</td>
+<td>Great starter pattern</td>
+</tr>
+<tr>
+<td>Plan &amp; Solve</td>
+<td>⭐⭐ Medium</td>
+<td>Moderate</td>
+<td>After mastering basics</td>
+</tr>
+<tr>
+<td>REWOO</td>
+<td>⭐⭐ Medium</td>
+<td>Moderate</td>
+<td>When cost matters</td>
+</tr>
+<tr>
+<td>Self-Discovery</td>
+<td>⭐⭐⭐ Complex</td>
+<td>Longer</td>
+<td>For advanced users</td>
+</tr>
+<tr>
+<td>Reflexion</td>
+<td>⭐⭐⭐ Complex</td>
+<td>Longer</td>
+<td>When you understand Reflection</td>
+</tr>
+<tr>
+<td>LLM Compiler</td>
+<td>⭐⭐⭐⭐ Very Complex</td>
+<td>Significant</td>
+<td>For expert users</td>
+</tr>
+<tr>
+<td>LATS</td>
+<td>⭐⭐⭐⭐ Very Complex</td>
+<td>Significant</td>
+<td>For expert users</td>
+</tr>
+<tr>
+<td>STORM</td>
+<td>⭐⭐⭐ Complex</td>
+<td>Longer</td>
+<td>When you need research</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-quality-vs-speed">Output Quality vs Speed<a class="headerlink" href="#output-quality-vs-speed" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Quality ↑
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>|
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>| Reflexion (learns)     LATS (explores)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>|
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>| Self-Discovery        STORM (comprehensive)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>| (adaptive)
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>|
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>| Reflection (iterates)
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>|
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>| Plan &amp; Solve (structured)    LLM Compiler (parallel)
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>|
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>| ReAct (interactive)
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>|
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>| REWOO (efficient)
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>|
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>└────────────────────────────────────────→ Speed
+</code></pre></div>
+<h3 id="recommended-learning-path">Recommended Learning Path<a class="headerlink" href="#recommended-learning-path" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Start</strong>: ReAct → Learn tool use and iterative reasoning</li>
+<li><strong>Next</strong>: Reflection → Understand quality improvement through iteration</li>
+<li><strong>Then</strong>: Plan &amp; Solve → Learn structured decomposition</li>
+<li><strong>Intermediate</strong>: REWOO, Self-Discovery → Efficiency and adaptation</li>
+<li><strong>Advanced</strong>: Reflexion, STORM → Learning and research</li>
+<li><strong>Expert</strong>: LATS, LLM Compiler → Exploration and parallelism</li>
+</ol>
+<h2 id="decision-flowchart">Decision Flowchart<a class="headerlink" href="#decision-flowchart" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Do you need to use external tools/APIs?
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├─ Yes → ReAct (or REWOO if cost-sensitive)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>└─ No → Continue
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Is quality iteration important?
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>├─ Yes → Do you learn from failures?
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├─ Yes → Reflexion
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   └─ No → Reflection
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>└─ No → Continue
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>Is it a planning/decomposition task?
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>├─ Yes → Are subtasks independent?
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│   ├─ Yes → LLM Compiler
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>│   └─ No → Plan &amp; Solve
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>└─ No → Continue
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Do you need comprehensive research?
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>├─ Yes → STORM
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>└─ No → Continue
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>Do you need to explore multiple solutions?
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>├─ Yes → LATS
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>└─ No → Self-Discovery (for adaptive reasoning)
+</code></pre></div>
+<h2 id="pattern-combination-strategies">Pattern Combination Strategies<a class="headerlink" href="#pattern-combination-strategies" title="Permanent link">&para;</a></h2>
+<p>Some tasks benefit from combining patterns:</p>
+<h3 id="sequential-combinations">Sequential Combinations<a class="headerlink" href="#sequential-combinations" title="Permanent link">&para;</a></h3>
+<p><strong>STORM → Reflection</strong>: Research then polish
+- Use STORM for comprehensive research
+- Use Reflection to refine and polish the final report</p>
+<p><strong>Self-Discovery → Reflexion</strong>: Strategy then learning
+- Use Self-Discovery to select initial approach
+- Use Reflexion to learn and improve through trials</p>
+<p><strong>Plan &amp; Solve → ReAct</strong>: Plan then execute
+- Use Plan &amp; Solve to create detailed plan
+- Use ReAct to execute steps with tool interaction</p>
+<h3 id="parallel-combinations">Parallel Combinations<a class="headerlink" href="#parallel-combinations" title="Permanent link">&para;</a></h3>
+<p><strong>Multiple ReAct agents</strong>: Parallel tool usage
+- Different agents handle different tool domains
+- Combine results for comprehensive answer</p>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Choose a pattern from the matrix above</li>
+<li>Read the detailed <a href="../react/">pattern documentation</a></li>
+<li>Try the <a href="../../examples/">examples</a></li>
+<li>Learn about <a href="../../guides/prompt-customization/">customization</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Original content: MIT © 2025 osok · Translations: CC BY 4.0
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/metrika.js"></script>
+      
+    
+  </body>
+</html>
